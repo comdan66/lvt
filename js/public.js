@@ -44,4 +44,24 @@ $(function () {
       $that.attr ('data-n', $(this).index () + 1);
     });
   });
+
+  $('.u2').each (function () {
+    var $that = $(this);
+    var $span = $that.find ('>*');
+    var divs = [];
+    for (var i = 1; i < $span.length; i++) {
+      if (i % 2) {
+        divs.push ($span.eq (i));
+      } else {
+        divs.push ($span.eq (i));
+        $('<div />').append (divs).appendTo ($that);
+        divs = [];
+      }
+    }
+    // $that.find ('span').each (function (i) {
+    //   if (!i) return;
+
+    //   // $(this).remove ();
+    // });
+  })
 });
