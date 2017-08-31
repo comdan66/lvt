@@ -327,33 +327,37 @@ html {
     }
   }
 }
+
 #_c {
   display: inline-block;
   width: 100%;
   height: 100%;
   margin-top: $h;
 }
+
 #_o {
   position: fixed;
   right: 8px;
   bottom: $t + 8px;
   display: inline-block;
-  width: 34px;
-  height: 34px;
-  font-size: 30px;
-  background-color: rgba(250, 191, 48, .8);
+  width: 65px;
+  height: 85px;
+  font-size: 28px;
+  line-height: 27px;
+  background-color: rgba(250, 191, 48, .9);
   color: white;
-  font-size: 13px;
+  // font-size: 26px;
+  z-index: 9;
 
   &:before {
     display: inline-block;
-    height: 16px;
-    line-height: 16px;
+    height: 26px;
+    line-height: 26px;
     width: 100%;
     font-family: "icomoon"; speak: none; font-style: normal; font-weight: normal; font-variant: normal;
     @include font-smoothing(antialiased);
     content: "\e902";
-    font-size: 20px;
+    font-size: 30px;
   }
 }
 .select {
