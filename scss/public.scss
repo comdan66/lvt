@@ -42,6 +42,10 @@ html {
     background-position: top;
 
     @include font-smoothing(antialiased);
+    &.launch {
+      background: image-url('wp_bg.png', false, false);
+      background-size: cover;
+    }
   }
 }
 
@@ -1846,5 +1850,25 @@ html {
         }
       }
     }
+  }
+}
+#launch {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+    
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+
+
+  img {
+    display: inline-block;
+    width: calc(100% - 16px * 2);
   }
 }
