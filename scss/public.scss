@@ -1676,10 +1676,12 @@ html {
             padding-left: 8px;
           }
         }
-        &:nth-child(14), &:nth-child(15) {
+        // &:nth-child(14), &:nth-child(15) {
+        //   height: 80px;
+        // }
+        &.m2 {
           height: 80px;
         }
-
       }
     }
     .k {
