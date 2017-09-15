@@ -605,7 +605,9 @@ html {
   + .u2 {
     margin-top: 16px;
   }
-  
+  a {
+    color: rgba(255, 255, 255, .85);
+  }
   > * {
     display: inline-block;
     width: 100%;
