@@ -1872,3 +1872,91 @@ html {
     width: calc(100% - 16px * 2);
   }
 }
+
+._box {
+  position: fixed;
+  display: inline-block;
+  background-color: white;
+
+  z-index: -99999;
+  left: -99999px;
+  top: -99999px;
+
+  overflow: hidden;
+  @include opacity(0);
+  @include transition(opacity .3s);
+}
+._bc {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  @include opacity(0);
+  @include transition(opacity .3s);
+  z-index: -9999;
+  background-color: rgba(0, 0, 0, 0.3)
+}
+#loading {
+  width: 220px;
+  height: 220px;
+  line-height: 220px * 2 - 80px;
+  font-size: 14px;
+  @include scale(0);
+  @include overflow-docx3();
+  @include border-radius(10px);
+  @include box-shadow(0 7px 8px -4px rgba(0,0,0,0.2), 0 13px 19px 2px rgba(0,0,0,0.14), 0 5px 24px 4px rgba(0,0,0,0.12));
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    display: inline-block;
+    background-color: white;
+    @include border-radius(50%);
+  }
+
+  &:before {
+    left: calc(50% - 120px / 2);
+    top: calc(50% - 120px / 2 - 16px);
+    width: 120px;
+    height: 120px;
+
+    @include background-image(linear-gradient(
+      rgba(153, 183, 210, 1.00) 0%,
+      rgba(6, 83, 156, 1.00) 100%));
+    @include animation(rotate 1s linear infinite);
+    @include box-shadow(inset 0 0 2px rgba(0, 0, 0, .3));
+  }
+  &:after {
+    left: calc(50% - 100px / 2);
+    top: calc(50% - 100px / 2 - 16px);
+    width: 100px;
+    height: 100px;
+    @include box-shadow(0 0 3px rgba(0, 0, 0, .3));
+  }
+
+  &.s {
+    top: calc(50% - 220px / 2);
+    left: calc(50% - 220px / 2);
+    z-index: 200;
+    @include opacity(1);
+    @include transition(transform .3s cubic-bezier(.68, -0.275, .825, 0.115));
+    
+    + label._bc {
+      z-index: 200 - 5;
+      left: 0;
+      @include opacity(1);
+    }
+    
+    &.a {
+      @include transition(transform .3s cubic-bezier(.175, .885, .32, 1.275));
+      @include scale(1);
+    }
+  }
+}
+@include keyframes(rotate){
+  100% {
+    @include rotate(360deg);
+  }
+}
