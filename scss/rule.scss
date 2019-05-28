@@ -1,0 +1,108 @@
+@import "_oa";
+
+* {
+  &, &:after, &:before {
+    vertical-align: top;
+    @include box-sizing(border-box);
+    @include selection(rgba(150, 200, 255, 1), rgba(255, 255, 255, 1));
+    @include font-smoothing(antialiased);
+  }
+}
+
+html {
+  height: 100%;
+
+  body {
+    position: relative;
+
+    display: inline-block;
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+
+    color: rgba(90, 90, 90, 1.00);
+    text-align: center;
+    font-size: 16px;
+    font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif, "微軟正黑體", "Microsoft JhengHei";
+
+    background-color: white;
+
+    @include font-smoothing(antialiased);
+
+  }
+}
+
+
+$bluecolor: rgba(10, 78, 154, 1.00);
+
+p {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 10px;
+
+  &.nopad {
+    padding-bottom: 0;
+  }
+
+  a {
+    display: inline-block;
+    cursor: pointer;
+    color: $bluecolor;
+    text-decoration: underline;
+    @include transition(all .3s);
+
+    &:hover, &:active {
+      color: rgba(10, 78, 154, .8);
+    }
+  }
+}
+
+.boxs {
+  display: inline-block;
+  width: 100%;
+  max-width: 1000px;
+  border-top: 5px solid $bluecolor;
+
+  h1 {
+    display: inline-block;
+    width: 100%;
+    margin: 0;
+    padding: 30px 0;
+    border-bottom: 1px solid rgba(228, 228, 228, 1.00);
+  }
+
+  .box {
+    display: inline-block;
+    width: 90%;
+    border-bottom: 5px solid $bluecolor;
+    text-align: left;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+
+    h6 {
+      margin: 20px 0;
+      color: $bluecolor;
+    }
+
+    b {
+      display: inline-block;
+      width: 100%;
+      color:  rgba(40, 40, 40, .9);
+      margin-bottom: 10px;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
