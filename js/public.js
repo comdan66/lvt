@@ -64,4 +64,31 @@ $(function () {
     //   // $(this).remove ();
     // });
   })
+
+
+  var loading = {
+    $el: $('#loading'),
+    ter: [],
+    clrTer: function (str) {
+      this.ter.map (clearTimeout);
+      this.ter = [];
+    },
+    show: function (str) {
+      if (!this.$el.length) return false;
+      if (typeof str !== 'undefined') this.$el.text (str);
+      this.clrTer ();
+      this.$el.addClass ('s');
+      this.ter.push (setTimeout (function () { this.$el.addClass ('a'); }.bind (this), 100));
+      return this;
+    },
+    close: function () {
+      if (!this.$el.length) return false;
+      this.clrTer ();
+      this.$el.removeClass ('a');
+      this.ter.push (setTimeout (function () { this.$el.removeClass ('s'); }.bind (this), 330));
+      return this;
+    },
+  };
+
+  loading.show ();
 });
